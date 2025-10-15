@@ -1,0 +1,4 @@
+[
+  { "prefix": "foo", "target": "http://127.0.0.1:8081" },
+  { "prefix": "bar", "target": "http://127.0.0.1:8082" }
+]
