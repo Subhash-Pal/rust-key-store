@@ -1,6 +1,6 @@
 ```shard-router implementation.
 
-✅ 1. Start Backend Key-Servers
+1. Start Backend Key-Servers
 powershell 2
 3
 4
