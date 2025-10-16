@@ -1,4 +1,4 @@
-shard-router implementation.
+```shard-router implementation.
 
 ✅ 1. Start Backend Key-Servers
 powershell 2
@@ -10,8 +10,11 @@ cargo run -- --port 8081
 
 
 # Terminal 2: key-server for "bar" prefix
+
 cargo run -- --port 8082
+
 These run in key-server mode (no --routes). 
+
 
 2. Create routes.json
 json
@@ -66,3 +69,4 @@ powershell
 curl.exe --% http://localhost:8081/keys/.x
 # → {"val":42}
 This proves the shard router stripped the prefix and forwarded correctly.
+```
