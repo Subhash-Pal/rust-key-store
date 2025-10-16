@@ -8,6 +8,7 @@ powershell 2
 # Terminal 1: key-server for "foo" prefix
 cargo run -- --port 8081
 
+
 # Terminal 2: key-server for "bar" prefix
 cargo run -- --port 8082
 These run in key-server mode (no --routes). 
