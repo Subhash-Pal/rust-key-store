@@ -1,8 +1,11 @@
 [package]
 name = "rust-key-store"
 version = "0.1.0"
-edition = "2024"
-
+edition = "2021"
+# 👇 Add this section:
+[[bin]]
+name = "kvs-client"
+path = "src/client.rs"
 
 [dependencies]
 axum = "0.8.6"
@@ -13,3 +16,5 @@ tokio = { version = "1.0", features = ["full"] }
 urlencoding = "2.1"
 reqwest = { version = "0.12", features = ["json"] }
 http = "1.1"
+rustyline = "14.0"
+anyhow = "1.0"
