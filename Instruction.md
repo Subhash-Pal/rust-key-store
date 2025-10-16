@@ -1,33 +1,33 @@
-complete, step-by-step command sequence for two terminals that demonstrates your fully working Step 3: client-cli — with expected outputs.
 
 🖥️ Terminal 1: Start the Key-Server
 powershell
 
-# Navigate to project root (if not already there)
+
+1
+2
 cd D:\Rust Domain\Rust-Daily\rust-key-store
-
-# Start the key-server on port 3000
 cargo run --bin rust-key-store -- --port 3000
-✅  Output:
+✅ Expected output:
 
- Key server listening on http://127.0.0.1:3000
-💡 Leave this terminal running. 
 
-🖥️ Terminal 2: Use the Client CLI
+
+1
+🔑 Key server listening on http://127.0.0.1:3000
+🔸 Leave this running. 
+
+🖥️ Terminal 2: Client CLI Commands (One-off + REPL)
 powershell
 
 
-
-# Navigate to project root
 cd D:\Rust Domain\Rust-Daily\rust-key-store
 
-# 1. Set a key with JSON value
+# 1. Set a key with nested JSON
 .\target\debug\kvs-client.exe --% set user.profile "{\"name\": \"Alice\", \"age\": 30}"
 
-# 2. Get the value
+# 2. Get the key
 .\target\debug\kvs-client.exe get user.profile
 
-# 3. Update a key
+# 3. Update the key
 .\target\debug\kvs-client.exe --% update user.profile "{\"name\": \"Alice\", \"age\": 31}"
 
 # 4. Delete the key
@@ -35,16 +35,16 @@ cd D:\Rust Domain\Rust-Daily\rust-key-store
 
 # 5. Test REPL mode
 .\target\debug\kvs-client.exe
-> set user.repl {"active": true}
-OK: /keys/user.repl
-> get user.repl
+> set app.config {"debug": true}
+OK: /keys/app.config
+> get app.config
 {
-  "active": true
+  "debug": true
 }
-> delete user.repl
-OK: /keys/user.repl
+> delete app.config
+OK: /keys/app.config
 > exit
-✅ Expected Outputs:
+✅ outputs:
 
 text
 
@@ -64,17 +64,3 @@ OK: /keys/user.profile
 # 4. Delete
 OK: /keys/user.profile
 
-# 5. REPL — as shown inline above
-✅ Success Criteria Met
-One-off commands
-(
-set
-,
-get
-,
-update
-,
-delete
-)
-✅
-REPL mode with history
