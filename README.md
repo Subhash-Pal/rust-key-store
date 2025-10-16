@@ -7,7 +7,8 @@ powershell
 2
 cd D:\Rust Domain\Rust-Daily\rust-key-store
 cargo run --bin rust-key-store -- --port 3000
-✅ Expected output:
+
+✅ output:
 
 
 
